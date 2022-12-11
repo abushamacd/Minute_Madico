@@ -1,5 +1,6 @@
 import Head from "next/head";
 import About from "../sections/About";
+import Appoinments from "../sections/Appoinments";
 import Categories from "../sections/Categories";
 import Clients from "../sections/Clients";
 import Doctors from "../sections/Doctors";
@@ -18,6 +19,7 @@ export default function Home() {
       <Categories />
       <About />
       <Doctors />
+      <Appoinments />
     </div>
   );
 }
