@@ -19,7 +19,7 @@ const About = () => {
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <Badge />
+            <Badge text="Know About Minute Madico" />
             <h1
               className={`title-font sm:text-4xl text-3xl mt-4 font-medium text-transparent bg-clip-text bg-gradient-to-bl from-primary to-error ${process.env.NEXT_PUBLIC_gt}`}
             >

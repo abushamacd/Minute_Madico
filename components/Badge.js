@@ -1,9 +1,9 @@
 import React from "react";
 
-const Badge = () => {
+const Badge = ({ text }) => {
   return (
     <div className={`badge ${process.env.NEXT_PUBLIC_gb} text-white`}>
-      Know About Minute Madico
+      {text}
     </div>
   );
 };
