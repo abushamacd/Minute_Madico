@@ -8,7 +8,7 @@ const Category = ({ category }) => {
     <div className="xl:w-1/5 md:w-1/2 p-4">
       <div className="border border-gray-200 p-6 rounded-lg">
         <div
-          className={`w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4`}
+          className={`w-20 h-20 inline-flex items-center justify-center rounded-full border-2 border-accent text-accent mb-4`}
         >
           <div className="text-5xl">{icon}</div>
         </div>
@@ -18,7 +18,7 @@ const Category = ({ category }) => {
         <p className="leading-relaxed text-base">{desc}</p>
         <Link
           href={url}
-          className="flex items-center text-sm font-bold mt-2 text-primary"
+          className="flex items-center text-sm font-bold mt-2 text-accent"
         >
           Find Here <BsArrowRight className="ml-2" />
         </Link>

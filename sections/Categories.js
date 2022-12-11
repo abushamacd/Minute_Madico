@@ -44,7 +44,7 @@ const Categories = () => {
     },
   ];
   return (
-    <section className="text-gray-600 body-font">
+    <section className="">
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
           <h1
@@ -52,7 +52,7 @@ const Categories = () => {
           >
             Explore By Categories
           </h1>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
+          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500">
             Great doctor if you need your family member to get effective
             immediate assistance, emergency treatment or a simple consultation.
           </p>

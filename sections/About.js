@@ -6,21 +6,21 @@ import about from "../public/images/about.png";
 
 const About = () => {
   return (
-    <section class="text-gray-600 body-font">
-      <div class="container mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
-        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+    <section className="text-gray-600 body-font">
+      <div className="container mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
+        <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <div className={`badge ${process.env.NEXT_PUBLIC_gb} text-white`}>
             Know About Minute Madico
           </div>
           <h1
-            class={`title-font sm:text-4xl text-3xl mt-4 font-medium text-transparent bg-clip-text bg-gradient-to-bl from-primary to-error ${process.env.NEXT_PUBLIC_gt}`}
+            className={`title-font sm:text-4xl text-3xl mt-4 font-medium text-transparent bg-clip-text bg-gradient-to-bl from-primary to-error ${process.env.NEXT_PUBLIC_gt}`}
           >
             Good Services And Better
-            <br class="hidden lg:inline-block" />
+            <br className="hidden lg:inline-block" />
             Health By Our Specialists
           </h1>
           <Span />
-          <p class="mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed">
             Great doctor if you need your family member to get effective
             immediate assistance, emergency treatment or a simple consultation.
             <br />
@@ -32,14 +32,14 @@ const About = () => {
           </p>
           <Button text="Read More" />
         </div>
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
           {/* <img
             
             alt="hero"
             src="../public/images/about.png"
           /> */}
           <Image
-            class="object-cover object-center rounded"
+            className="object-cover object-center rounded"
             src={about}
             alt="about"
           />
