@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Clients from "../sections/Clients";
 import Hero from "../sections/Hero";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
+      <Clients />
     </div>
   );
 }
