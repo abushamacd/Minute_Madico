@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import Clock from "../components/Clock";
+import Span from "../components/Span";
 
 const Hero = () => {
   return (
@@ -12,10 +13,11 @@ const Hero = () => {
           >
             Find The Best Doctor
           </h1>
-          <p className="mb-8 leading-relaxed">
+          <p className="leading-relaxed">
             Great doctor if you need your family member to get immediate
             assistance, emergency treatment or a simple consultation.
           </p>
+          <Span />
           <div className="flex w-full md:justify-start justify-center items-end">
             <div className="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
               <label

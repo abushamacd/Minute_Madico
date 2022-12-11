@@ -4,6 +4,7 @@ import { ImLab } from "react-icons/im";
 import { FaHandHoldingMedical, FaAmbulance } from "react-icons/fa";
 import Category from "../components/Category";
 import Span from "../components/Span";
+import SectionHeader from "../components/SectionHeader";
 
 const Categories = () => {
   const categories = [
@@ -47,16 +48,11 @@ const Categories = () => {
     <section className="">
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
-          <h1
-            className={`sm:text-3xl text-2xl title-font mb-4 font-bold text-transparent ${process.env.NEXT_PUBLIC_gt}`}
-          >
-            Explore By Categories
-          </h1>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500">
-            Great doctor if you need your family member to get effective
-            immediate assistance, emergency treatment or a simple consultation.
-          </p>
-          <Span />
+          <SectionHeader
+            title="Explore By Categories"
+            desc="Great doctor if you need your family member to get effective
+            immediate assistance, emergency treatment or a simple consultation."
+          />
         </div>
         <div className="flex flex-wrap -m-4">
           {categories.map((category) => {
