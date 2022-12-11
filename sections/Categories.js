@@ -3,6 +3,7 @@ import { GiNinjaMask, GiPillDrop } from "react-icons/gi";
 import { ImLab } from "react-icons/im";
 import { FaHandHoldingMedical, FaAmbulance } from "react-icons/fa";
 import Category from "../components/Category";
+import Span from "../components/Span";
 
 const Categories = () => {
   const categories = [
@@ -46,16 +47,16 @@ const Categories = () => {
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
-          <h1 className="sm:text-3xl text-2xl title-font text-primary mb-4 font-bold">
+          <h1
+            className={`sm:text-3xl text-2xl title-font mb-4 font-bold text-transparent ${process.env.NEXT_PUBLIC_gt}`}
+          >
             Explore By Categories
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
             Great doctor if you need your family member to get effective
             immediate assistance, emergency treatment or a simple consultation.
           </p>
-          <div className="flex mt-6 justify-center">
-            <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
-          </div>
+          <Span />
         </div>
         <div className="flex flex-wrap -m-4">
           {categories.map((category) => {

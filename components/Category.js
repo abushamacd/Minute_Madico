@@ -7,7 +7,9 @@ const Category = ({ category }) => {
   return (
     <div className="xl:w-1/5 md:w-1/2 p-4">
       <div className="border border-gray-200 p-6 rounded-lg">
-        <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+        <div
+          className={`w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4`}
+        >
           <div className="text-5xl">{icon}</div>
         </div>
         <h2 className="text-lg text-gray-900 font-medium title-font mb-2">

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import About from "../sections/About";
 import Categories from "../sections/Categories";
 import Clients from "../sections/Clients";
 import Hero from "../sections/Hero";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <Clients />
       <Categories />
+      <About />
     </div>
   );
 }
