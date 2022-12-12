@@ -3,6 +3,7 @@ import About from "../sections/About";
 import Appoinments from "../sections/Appoinments";
 import Categories from "../sections/Categories";
 import Clients from "../sections/Clients";
+import Cta from "../sections/Cta";
 import Doctors from "../sections/Doctors";
 import Faqs from "../sections/Faqs";
 import Hero from "../sections/Hero";
@@ -22,6 +23,7 @@ export default function Home() {
       <Doctors />
       <Appoinments />
       <Faqs />
+      <Cta />
     </div>
   );
 }
