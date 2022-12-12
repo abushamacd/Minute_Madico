@@ -4,6 +4,7 @@ import Appoinments from "../sections/Appoinments";
 import Categories from "../sections/Categories";
 import Clients from "../sections/Clients";
 import Doctors from "../sections/Doctors";
+import Faqs from "../sections/Faqs";
 import Hero from "../sections/Hero";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <About />
       <Doctors />
       <Appoinments />
+      <Faqs />
     </div>
   );
 }

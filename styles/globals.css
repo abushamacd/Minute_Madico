@@ -24,3 +24,7 @@ body {
 .banner {
   background-image: url(../public/images/cta.jpg);
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
