@@ -55,8 +55,8 @@ const Appoinments = () => {
               );
             })}
           </div>
-          <div className="p-4 lg:w-1/2">
-            <form className="w-full max-w-lg">
+          <div className="p-4 lg:w-1/2 w-full">
+            <form className="">
               <div className="flex flex-wrap mb-6">
                 <div className="w-full px-3 mb-6 md:mb-0">
                   <label
