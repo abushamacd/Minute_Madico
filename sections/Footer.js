@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Span from "../components/Span";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -13,6 +14,9 @@ const Footer = () => {
           >
             <img src="logo.png" alt="" />
           </Link>
+          <div className="md:flex justify-start">
+            <Span />
+          </div>
           <p className="mt-2 text-lg text-gray-500">
             Great doctor if you need your family member to get effective
             immediate assistance, emergency treatment or a simple consultation.
