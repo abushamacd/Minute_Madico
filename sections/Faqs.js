@@ -48,7 +48,7 @@ const Faqs = () => {
     <section className="text-gray-600 body-font">
       <div className="container px-5 pb-24 mx-auto">
         <div className="flex flex-wrap -m-4 items-center">
-          <div className="p-4 lg:w-1/2">
+          <div className="p-4 lg:w-1/2 mx-auto">
             <Image
               className="object-cover object-center rounded"
               src={faq}

@@ -3,20 +3,20 @@ import Button from "../components/Button";
 
 const Cta = () => {
   return (
-    <div className="">
+    <div className=" md:text-center lg:text-start">
       <div className="relative px-4 py-6 overflow-hidden sm:px-6 sm:py-8 lg:p-12 xl:p-16">
         <h2
           className={`text-2xl font-semibold font-display sm:text-3xl text-accent`}
         >
           We have got more coming...
         </h2>
-        <p className="mt-2 max-w-xl text-base text-gray-400">
+        <p className="mt-2 lg:max-w-xl text-base text-gray-400 md:text-center lg:text-start">
           Want to hear from us when we add new components? Sign up for our
           newsletter and we will email you every time we release a new batch of
           components.
         </p>
-        <div className="mt-6 sm:flex jusitfy-start">
-          <form className="flex flex-col justify-start items-center w-3/4 max-w-sm space-y-3 md:flex-row md:w-full md:space-x-3 md:space-y-0">
+        <div className="mt-6 sm:flex lg:justify-start md:justify-center">
+          <form className="flex flex-col justify-start items-center w-full max-w-sm space-y-3 md:flex-row md:w-full md:space-x-3 md:space-y-0">
             <div className=" relative ">
               <input
                 type="text"
