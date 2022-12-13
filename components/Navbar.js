@@ -61,7 +61,7 @@ const Navbar = () => {
           name: "Dashboard",
         },
         {
-          path: "/",
+          path: "/patients/appoinment",
           name: "Appoinment",
         },
       ],
