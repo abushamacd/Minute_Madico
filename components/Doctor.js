@@ -6,10 +6,10 @@ import { BiLocationPlus } from "react-icons/bi";
 import Image from "next/image";
 
 const Doctor = ({ doctor }) => {
-  const { name, designation, location, schedule, fee, img } = doctor;
+  const { name, specialist, location, schedule, fee, img } = doctor;
   return (
     <>
-      <div className="p-4 lg:w-1/4 md:w-1/2 ">
+      <div className="p-4 lg:w-1/4 md:w-1/2 cursor-pointer">
         <div className="h-full flex flex-col items-center text-center border rounded-lg overflow-hidden relative z-10">
           <Image
             priority={true}
@@ -21,7 +21,7 @@ const Doctor = ({ doctor }) => {
             <h2 className={`title-font font-bold text-xl text-accent`}>
               {name}
             </h2>
-            <h4 className="text-neutral mb-3 text-sm">{designation}</h4>
+            <h4 className="text-neutral mb-3 text-sm">{specialist}</h4>
             <div className="doctor_info">
               <p className="mb-2 flex items-center">
                 {" "}

@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { BsChatDots } from "react-icons/bs";
-import Script from "next/script";
+import Image from "next/image";
+import logo from "../public/logo.png";
 
 const Navbar = () => {
   if (process.browser) {
@@ -11,15 +12,21 @@ const Navbar = () => {
     };
     function scrollFunction() {
       if (
-        document.body.scrollTop > 1000 ||
+        document.body.scrollTop > 100 ||
         document.documentElement.scrollTop > 100
       ) {
-        mybutton.style.display = "block";
+        if (mybutton) {
+          mybutton.style.display = "block";
+        }
       } else {
-        mybutton.style.display = "none";
+        if (mybutton) {
+          mybutton.style.display = "none";
+        }
       }
     }
-    mybutton.addEventListener("click", backToTop);
+    if (mybutton) {
+      mybutton.addEventListener("click", backToTop);
+    }
 
     function backToTop() {
       document.body.scrollTop = 0;
@@ -40,7 +47,7 @@ const Navbar = () => {
           name: "Dashboard",
         },
         {
-          path: "/doctorlist",
+          path: "/doctors/doctorlist",
           name: "Doctors List",
         },
       ],
@@ -165,7 +172,14 @@ const Navbar = () => {
           </ul>
         </div>
         <Link href={"/"}>
-          <img src="logo.png" alt="" width={220} className={`pl-2`} />
+          <Image
+            priority={true}
+            src={logo}
+            alt=""
+            width={220}
+            height={30}
+            className={`pl-2`}
+          />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

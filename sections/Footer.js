@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Span from "../components/Span";
+import logo from "../public/logo.png";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -12,7 +14,14 @@ const Footer = () => {
             href={`/`}
             className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
           >
-            <img src="logo.png" alt="" />
+            <Image
+              priority={true}
+              src={logo}
+              alt=""
+              width={220}
+              height={30}
+              className={`pl-2`}
+            />
           </Link>
           <div className="md:flex justify-start">
             <Span />
