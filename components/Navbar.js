@@ -1,8 +1,109 @@
 import React from "react";
 import Link from "next/link";
 import { BsChatDots } from "react-icons/bs";
+import Script from "next/script";
 
 const Navbar = () => {
+  if (process.browser) {
+    let mybutton = document.getElementById("btn-back-to-top");
+    window.onscroll = function () {
+      scrollFunction();
+    };
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 1000 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  }
+  const routes = [
+    {
+      path: "/",
+      name: "Home",
+    },
+    {
+      path: "/",
+      name: "Doctors",
+      subRoutes: [
+        {
+          path: "/dashboard",
+          name: "Dashboard",
+        },
+        {
+          path: "/doctorlist",
+          name: "Doctors List",
+        },
+      ],
+    },
+    {
+      path: "/",
+      name: "Patients",
+      subRoutes: [
+        {
+          path: "/",
+          name: "Dashboard",
+        },
+        {
+          path: "/",
+          name: "Appoinment",
+        },
+      ],
+    },
+    {
+      path: "/",
+      name: "Pharmacy",
+      subRoutes: [
+        {
+          path: "/",
+          name: "Shop",
+        },
+        {
+          path: "/",
+          name: "Medicine Detail",
+        },
+      ],
+    },
+    {
+      path: "/",
+      name: "Pages",
+      subRoutes: [
+        {
+          path: "/",
+          name: "Faqs",
+        },
+        {
+          path: "/",
+          name: "About Us",
+        },
+        {
+          path: "/",
+          name: "Contact Us",
+        },
+        {
+          path: "/",
+          name: "Trems & Policy",
+        },
+        {
+          path: "/",
+          name: "Privacy Policy",
+        },
+      ],
+    },
+    {
+      path: "/",
+      name: "Admin",
+    },
+  ];
   return (
     <div className="navbar bg-base-100 fixed z-50">
       <div className="navbar-start">
@@ -27,34 +128,40 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <a className="justify-between">
-                Parent
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
+            {routes.map((route, index) => {
+              if (route.subRoutes) {
+                return (
+                  <li key={index} tabIndex={0}>
+                    <Link href={"/"} className="justify-between">
+                      {route.name}
+                      <svg
+                        className="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                      </svg>
+                    </Link>
+                    <ul className="p-2 bg-white border">
+                      {route.subRoutes.map((subRoute, index) => {
+                        return (
+                          <li key={index} className="my_shadow">
+                            <Link href={subRoute.path}>{subRoute.name}</Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              }
+              return (
+                <li key={index}>
+                  <Link href={route.path}>{route.name}</Link>
                 </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+              );
+            })}
           </ul>
         </div>
         <Link href={"/"}>
@@ -63,34 +170,40 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li tabIndex={0}>
-            <a>
-              Parent
-              <svg
-                className="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
+          {routes.map((route, index) => {
+            if (route.subRoutes) {
+              return (
+                <li key={index} tabIndex={0}>
+                  <Link href={"/"}>
+                    {route.name}
+                    <svg
+                      className="fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                    </svg>
+                  </Link>
+                  <ul className="p-2 bg-white border">
+                    {route.subRoutes.map((subRoute, index) => {
+                      return (
+                        <li key={index} className="my_shadow">
+                          <Link href={subRoute.path}>{subRoute.name}</Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+              );
+            }
+            return (
+              <li key={index}>
+                <Link href={route.path}>{route.name}</Link>
               </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+            );
+          })}
         </ul>
       </div>
       <div className="navbar-end">
@@ -128,21 +241,43 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a className="justify-between">
+                <Link href={"/"} className="justify-between">
                   Profile
                   <span className="badge">New</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link href={"/"}>Settings</Link>
               </li>
               <li>
-                <a>Logout</a>
+                <Link href={"/"}>Logout</Link>
               </li>
             </ul>
           </div>
         </div>
       </div>
+      <button
+        type="button"
+        data-mdb-ripple="true"
+        data-mdb-ripple-color="light"
+        className="inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5"
+        id="btn-back-to-top"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          className="w-4 h-4"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+          ></path>
+        </svg>
+      </button>
     </div>
   );
 };
