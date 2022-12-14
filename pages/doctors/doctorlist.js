@@ -11,6 +11,7 @@ import doc05 from "../../public/images/doctors/05.jpg";
 import doc06 from "../../public/images/doctors/06.jpg";
 import doc07 from "../../public/images/doctors/07.jpg";
 import doc08 from "../../public/images/doctors/08.jpg";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const DoctorList = () => {
   const router = useRouter();
@@ -185,13 +186,7 @@ const DoctorList = () => {
                 })}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-accent">
-                <svg
-                  className="fill-current h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
+                <MdKeyboardArrowDown />
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import UserDropdown from "../../components/dashboard/UserDropdown";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { useRouter } from "next/router";
+import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
   if (process.browser) {
@@ -49,7 +50,7 @@ const Header = () => {
           <form className="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
             <div className="relative flex w-full flex-wrap items-stretch">
               <span className="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
-                <i className="fas fa-search"></i>
+                <FaSearch />
               </span>
               <input
                 type="text"
