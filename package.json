@@ -18,7 +18,8 @@
     "react-collapse": "^5.1.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "@popperjs/core": "2.9.1"
+    "@popperjs/core": "2.9.1",
+    "chart.js": "2.9.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",
