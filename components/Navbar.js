@@ -43,7 +43,7 @@ const Navbar = () => {
       name: "Doctors",
       subRoutes: [
         {
-          path: "/dashboard",
+          path: "/dashboard/dashboard",
           name: "Dashboard",
         },
         {
