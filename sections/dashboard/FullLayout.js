@@ -1,33 +1,23 @@
 import React from "react";
+import HeaderStats from "../../components/dashboard/HeaderStats";
+import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 const FullLayout = ({ children }) => {
-  const [open, setOpen] = React.useState(false);
-  const showMobilemenu = () => {
-    setOpen(!open);
-  };
-
   return (
-    <main>
-      <div className="flex">
-        {/******** Sidebar **********/}
-        <aside className={`shadow`}>
-          <Sidebar />
-        </aside>
-        {/********Content Area**********/}
-
-        <div className="">
-          {/********header**********/}
-          <Header />
-
-          {/********Middle Content**********/}
-          <div className="w-full ">
-            <div>{children}</div>
-          </div>
+    <>
+      <Sidebar />
+      <div className="relative md:ml-64 bg-gray-100">
+        <Header />
+        {/* Header */}
+        <HeaderStats />
+        <div className="px-4 md:px-10 mx-auto w-full -m-24">
+          {children}
+          <Footer />
         </div>
       </div>
-    </main>
+    </>
   );
 };
 
