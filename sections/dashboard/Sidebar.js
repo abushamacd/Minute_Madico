@@ -21,6 +21,11 @@ const Sidebar = () => {
       name: "Profile",
       icon: <ImProfile />,
     },
+    {
+      path: "/dashboard/adddoctor",
+      name: "Add Doctor",
+      icon: <ImProfile />,
+    },
   ];
   return (
     <>
