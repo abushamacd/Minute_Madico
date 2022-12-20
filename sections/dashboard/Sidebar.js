@@ -31,6 +31,11 @@ const Sidebar = () => {
       name: "All List",
       icon: <ImProfile />,
     },
+    {
+      path: "/dashboard/invoice",
+      name: "Invoice",
+      icon: <ImProfile />,
+    },
   ];
   return (
     <>
