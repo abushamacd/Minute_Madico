@@ -4,6 +4,7 @@ import styles from "../../styles/Auth.module.css";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import icon from "../../public/icon.png";
+import { toast } from "react-toastify";
 
 const Registration = () => {
   const currentColor = "#6E0963";
@@ -13,29 +14,26 @@ const Registration = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   // handle submit
   const onSubmit = async (data) => {
-    console.log(data);
     // Send to DB
-    fetch(`${process.env.NEXT_PUBLIC_URL}/user`, {
+    let res = await fetch(`${process.env.NEXT_PUBLIC_URL}/user`, {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // if (inserted.insertedId) {
-        //   toast("Product added successfully");
-        //   reset();
-        // } else {
-        //   toast.error("Product not added");
-        // }
-      });
+    });
+    const response = await res.json();
+    if (response?.data?.id) {
+      toast(`${response.message}`);
+      reset();
+    } else {
+      toast.error(`${response.message}`);
+    }
   };
 
   return (
