@@ -15,3 +15,6 @@
         </div>
     </div>
 </FullLayout>
+
+NEXT_PUBLIC_gb=bg-gradient-to-bl from-primary to-error
+NEXT_PUBLIC_gt=bg-clip-text bg-gradient-to-bl from-primary to-error
